@@ -63,6 +63,7 @@ namespace BlazorEcommerce.Identity.Service
                 var authResponseDto = new AuthResponseDto() { RefreshToken = refreshToken, Token = jwtToken };
 
                 return new DataResponse<AuthResponseDto>(authResponseDto, HttpStatusCodes.Accepted);
+
             }
         }
 
