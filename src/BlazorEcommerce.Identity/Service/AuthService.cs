@@ -22,6 +22,8 @@ namespace BlazorEcommerce.Identity.Service
         private readonly JwtSettings _jwtSettings;
         private const string AuthenticatorStoreLoginProvider = "[AuthenticatorStore]";
         public string AuthenticatorKeyTokenName = "AuthenticatorKey";
+        private string _IP = "";
+
         public AuthService(UserManager<ApplicationUser> userManager,
             IOptions<JwtSettings> jwtSettings,
             SignInManager<ApplicationUser> signInManager)
