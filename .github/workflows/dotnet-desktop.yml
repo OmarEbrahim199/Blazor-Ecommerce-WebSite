@@ -44,7 +44,7 @@ name: .NET
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "deployment" ]
   pull_request:
     branches: [ "deployment" ]
 
