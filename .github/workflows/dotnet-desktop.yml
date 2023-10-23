@@ -65,3 +65,23 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Configure Git user
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "github-actions@github.com"
+    - name: Merge to master branch
+      run: |
+        git checkout master
+        git merge --no-ff development
+         git push https://${{ secrets.MY_GITHUB_TOKEN }}@github.com/OmarEbrahim199/BlazorEcommerce.git master      
