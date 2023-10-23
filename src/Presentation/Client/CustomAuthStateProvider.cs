@@ -11,11 +11,13 @@ namespace BlazorEcommerce.Client
         private readonly ILocalStorageService _localStorageService;
         private readonly HttpClient _http;
 
+
         public CustomAuthStateProvider(ILocalStorageService localStorageService, HttpClient http)
         {
             _localStorageService = localStorageService;
             _http = http;
         }
+
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
